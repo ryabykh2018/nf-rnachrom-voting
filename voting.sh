@@ -109,6 +109,10 @@ python $SCRIPTSPATH/combine_batki.py --output-dir $OUTPUT_DIR
 echo "Adding missing genes..."
 python $SCRIPTSPATH/add_missing_genes.py --genes-file $GENESPATH/$GENES.bedrc --output-dir $OUTPUT_DIR
 
+# Plot gene type distribution
+echo "Plotting gene type distribution..."
+python $SCRIPTSPATH/make_plots.py -i $OUTPUT_DIR/counts.tsv -o $OUTPUT_DIR
+
 # Clean up intermediate files
 rm -f $OUTPUT_DIR/contacts.sorted.bed
 rm -f $OUTPUT_DIR/contacts.pos_strand.clusters.bed
