@@ -139,6 +139,7 @@ def get_batki_contacts_2(batki, starts, ends, ids, starts_true, ends_true, pairt
         indexes = np.arange(len(starts))
         gene_names, chrs_, gene_starts, gene_ends, starts_, ends_, gene_types, fromSources, covs_ = zip(*batki)
         gene_starts, gene_ends = np.array(gene_starts), np.array(gene_ends)
+        gene_ends = gene_ends + 1
         ncls = NCLS(gene_starts, gene_ends, np.arange(gene_starts.shape[0]))
         (
             overlapped_contacts,
