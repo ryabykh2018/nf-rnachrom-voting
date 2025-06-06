@@ -30,7 +30,7 @@ def process_batki_files(pos_file, neg_file, output_file):
                         coverage = float(coverage)
                         
                         # Calculate new value
-                        new_value = int(coverage * (rel_end - rel_start + 1))
+                        new_value = int(round(coverage * (rel_end - rel_start + 1),0))
                         # Write as tab-separated values
                         out.write(f"{gene}\t{chr_}\t{start}\t{end}\t{gene_type}\t{from_source}\t{new_value}\n")
                         
